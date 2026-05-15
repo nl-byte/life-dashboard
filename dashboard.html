@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>My 2026 Life Dashboard ✨</h1>
+  <p>Manifest • Move • Save • Grow</p>
+  <button id="logoutBtn">Logout</button>
+</header>
+
+<main>
+
+<section>
+  <h2>Weight Loss Progress</h2>
+  <p>Goal: 135 lbs → 115 lbs</p>
+
+  <div class="progress-card">
+    <p>May: 135 lbs</p>
+    <progress value="0" max="20"></progress>
+
+    <p>June 1: 130 lbs</p>
+    <progress value="5" max="20"></progress>
+
+    <p>July: 125 lbs</p>
+    <progress value="10" max="20"></progress>
+
+    <p>August: 120 lbs</p>
+    <progress value="15" max="20"></progress>
+
+    <p>September: 115 lbs</p>
+    <progress value="20" max="20"></progress>
+  </div>
+</section>
+
+<section>
+  <h2>Budget + Bills</h2>
+
+  <h3>Cash Flow</h3>
+  <input placeholder="VA check date">
+  <input placeholder="VA check amount">
+
+  <input placeholder="Check 1 date">
+  <input placeholder="Check 1 amount">
+
+  <input placeholder="Check 2 date">
+  <input placeholder="Check 2 amount">
+
+  <h3>Bills</h3>
+  <input placeholder="Bill name">
+  <input placeholder="Due date">
+  <input placeholder="Amount">
+
+  <button>Save Budget</button>
+</section>
+
+<section>
+  <h2>Manifestation Workbooks</h2>
+
+  <h3>Self Concept / Self Love</h3>
+  <input placeholder="Month">
+  <input placeholder="Workbook link">
+
+  <h3>Love / Relationships</h3>
+  <input placeholder="Month">
+  <input placeholder="Workbook link">
+
+  <h3>Money</h3>
+  <input placeholder="Month">
+  <input placeholder="Workbook link">
+
+  <button>Save Manifestation Links</button>
+</section>
+
+<section>
+  <h2>Workout Tracker</h2>
+  <input placeholder="Workout date">
+  <input placeholder="Workout type">
+  <input placeholder="Notes">
+  <button>Save Workout</button>
+</section>
+
+</main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

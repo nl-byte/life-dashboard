@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Life Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Login ✨</h1>
+  <p>Access your private life dashboard</p>
+</header>
+
+<section>
+  <h2>Sign In</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <br><br>
+
+  <button id="loginBtn">Login</button>
+  <button id="signupBtn">Create Account</button>
+
+  <p id="message"></p>
+</section>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBNFME-mcMvkkHqsGTiqSR1Hy_NJULn50g",
+  authDomain: "life-dashboard-9cf16.firebaseapp.com",
+  projectId: "life-dashboard-9cf16",
+  storageBucket: "life-dashboard-9cf16.firebasestorage.app",
+  messagingSenderId: "213933088943",
+  appId: "1:213933088943:web:70a5c4677ef62a060e345a"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const message = document.getElementById("message");
+
+document.getElementById("loginBtn").onclick = async () => {
+  try {
+    await signInWithEmailAndPassword(auth, email.value, password.value);
+    window.location.href = "dashboard.html";
+  } catch (error) {
+    message.textContent = error.message;
+  }
+};
+
+document.getElementById("signupBtn").onclick = async () => {
+  try {
+    await createUserWithEmailAndPassword(auth, email.value, password.value);
+    message.textContent = "Account created. You can log in now.";
+  } catch (error) {
+    message.textContent = error.message;
+  }
+};
+</script>
+
+</body>
+</html>
